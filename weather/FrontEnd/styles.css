@@ -1,0 +1,181 @@
+body {
+    background: linear-gradient(to bottom right, #0000ff, #000033);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .form-container {
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    position: relative;
+    animation: slideIn 0.5s ease-in-out;
+  }
+  
+  @keyframes slideIn {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .form-box {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .form {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .input-group i {
+    position: absolute;
+    left: 10px;
+    color: #aaa;
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  input[type="email"] {
+    width: 100%;
+    padding: 10px 10px 10px 30px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  input[type="text"]:focus,
+  input[type="password"]:focus,
+  input[type="email"]:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .toggle-password {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    color: #aaa;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .toggle-password:hover {
+    color: #fff;
+  }
+  
+  .btn {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #0000ff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+  }
+  
+  .btn:hover::before {
+    width: 200%;
+    height: 200%;
+  }
+  
+  .btn:hover {
+    background-color: #000033;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    animation: bounceIn 0.5s ease-in-out;
+  }
+  
+  @keyframes bounceIn {
+    0% {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    60% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .toggle-form {
+    font-size: 14px;
+  }
+  
+  .toggle-form a {
+    color: #0000ff;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .toggle-form a:hover {
+    color: #fff;
+  }
+  
+  @media (max-width: 768px) {
+    .form-container {
+      width: 90%;
+    }
+  }
